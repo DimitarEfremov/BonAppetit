@@ -20,10 +20,9 @@
                                 </td>
                                 <td th:text="${recipe.name}" ></td>
                                 <td th:text="${recipe.ingredients}" >{}</td>
-                                <td><a
-                                        th:action="@{/home/add-favourite{id}(id=${recipe.getId()})}" th:method="POST"
-                                ><img class="mr-2 " src="/img/add-to-favourites.png" alt="Dessert" width="35px" height="35px"></a></td>
-                                </td>
+                                <td><form th:action="@{/home/add-favourite/{id}(id=${recipe.getId()})}" th:method="POST">
+                                    <button><img class="mr-2 " src="/img/add-to-favourites.png" alt="Dessert" width="35px" height="35px"></button>
+                                </form></td>
                             </tr>
                         </table>
                     </div>
@@ -40,9 +39,9 @@
                                 </td>
                                 <td th:text="${recipe.name}" ></td>
                                 <td th:text="${recipe.ingredients}" >{}</td>
-                                <td><a
-                                        th:action="@{/home/add-favourite{id}(id=${recipe.getId()})}" th:method="POST"
-                                ><img class="mr-2 " src="/img/add-to-favourites.png" alt="Cocktail" width="35px" height="35px"></a></td>
+                                <td><form th:action="@{/home/add-favourite/{id}(id=${recipe.getId()})}" th:method="POST">
+                                   <button><img class="mr-2 " src="/img/add-to-favourites.png" alt="Cocktail" width="35px" height="35px"></button>
+                                </form></td>
                             </tr>
                         </table>
                     </div>
@@ -60,11 +59,9 @@
                                 </td>
                                 <td th:text="${recipe.name}" ></td>
                                 <td th:text="${recipe.ingredients}" >{}</td>
-                                <td><a>
-                                       <form th:action="@{/home/add-favourite{id}(id=${recipe.getId()})}" th:method="POST"
-                                ><img class="mr-2 " src="/img/add-to-favourites.png" alt="Main-Dish" width="35px" height="35px">
-                                       </form>
-                                           </a></td>
+                                <td><form th:action="@{/home/add-favourite/{id}(id=${recipe.getId()})}" th:method="POST">
+                                       <button><img class="mr-2 " src="/img/add-to-favourites.png" alt="Main-Dish" width="35px" height="35px"></button>
+                                </form></td>
                             </tr>
                         </table>
                     </div>

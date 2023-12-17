@@ -52,8 +52,8 @@ public class HomeController {
         return modelAndView;
     }
 
-    @PostMapping("/home/add-favourite")
-    public ModelAndView addFavourite(@PathVariable Long id){
+    @PostMapping("/home/add-favourite/{id}")
+    public ModelAndView addFavourite(@PathVariable("id") Long id){
 
         if (!loggedUser.isLogged()) {
             return new ModelAndView("redirect:/");
@@ -65,6 +65,6 @@ public class HomeController {
 
 
 
-        return new ModelAndView("home");
+        return new ModelAndView("redirect:/home");
     }
 }

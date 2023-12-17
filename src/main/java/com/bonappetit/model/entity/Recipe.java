@@ -26,7 +26,7 @@ public class Recipe extends BaseEntity {
     @ManyToOne
     private User addedBy;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "favouriteRecipes", fetch = FetchType.EAGER)
     private List<User> favouredBy;
 
 

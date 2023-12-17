@@ -69,6 +69,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void addFavourite(Long id) {
-        Optional<Recipe> recipe = recipeRepository.findById(id);
+        Recipe recipe = recipeRepository.findById(id).orElse(null);
+        User user = userRepository.findUserById(loggedUser.getId());
+        user.addFavourite(recipe);
+        userRepository.save(user);
+
     }
 }
